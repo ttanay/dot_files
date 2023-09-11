@@ -1,1 +1,1 @@
-1. Script installing Breath Silverfox theme for Konsole
+[ ] ~~Script installing Breath Silverfox theme for Konsole~~
