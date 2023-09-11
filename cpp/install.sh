@@ -2,6 +2,6 @@
 set -x
 
 function install_cpp {
-    sudo apt install cmake ccache ninja-build nasm yasm
-    source ./cpp/llvm.sh # ./cpp/llvm.sh?
+    sudo apt install -y cmake ccache ninja-build nasm yasm clangd-12
+    source ./cpp/llvm.sh 16 # ./cpp/llvm.sh?
 }

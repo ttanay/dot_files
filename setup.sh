@@ -3,6 +3,7 @@ set -x
 
 sudo apt update 
 sudo apt install -y git software-properties-common \
+    build-essential \
     vim \
     tmux \
     htop \
