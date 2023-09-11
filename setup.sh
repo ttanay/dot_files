@@ -1,7 +1,18 @@
 #!/usr/bin/env bash
 set -x
+
 sudo apt update 
-sudo apt install -y vim tmux htop rubygems tree
+sudo apt install -y git software-properties-common \
+    vim \
+    tmux \
+    htop \
+    rubygems \
+    tree \
+    python3 \
+    wget \
+    gnupg \
+    lsb_release \
+    gawk
 
 # TODO: Script is not idempotent because this is 
 #   added to the files multiple times
