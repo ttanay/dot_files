@@ -118,8 +118,17 @@ set number
 set linespace=3
 set backspace=indent,eol,start
 
+
+fun! StripTrailingWhitespace()
+    " Don't strip on these filetypes
+    if &ft =~ 'markdown'
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
 " Remove trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * call StripTrailingWhitespace()
 " }}}
 
 "System clipboard
