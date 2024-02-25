@@ -153,3 +153,16 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+
+" Run clang-format on save
+" https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
+function FormatBuffer()
+  if &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+    let cursor_pos = getpos('.')
+    :%!clang-format
+    call setpos('.', cursor_pos)
+  endif
+endfunction
+
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
