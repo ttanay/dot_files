@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 
 # Pre-requisites:
 # 1. sudo apt install wmctrl xdotool
@@ -6,10 +6,10 @@
 
 
 # Check if window is already viewable
-WINDOW_VIEWABLE=$(xwininfo -name 'Welcome - Zeal' | grep 'Map State: IsViewable')
+WINDOW_VIEWABLE=$(xdotool getwindowfocus getwindowname | grep 'Zeal')
 if [[ $WINDOW_VIEWABLE ]]
-then 
+then
   wmctile --shade zeal
-else 
+else
   wmctile --summon zeal --exec zeal
 fi
