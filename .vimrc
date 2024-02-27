@@ -28,6 +28,7 @@ call vundle#begin()
     Plugin 'tpope/vim-fugitive' "Git plugin
     Plugin 'airblade/vim-gitgutter' "Git markers in the side
     Plugin 'pechorin/any-jump.vim' "Go-to-def/ref
+    Plugin 'PhilRunninger/nerdtree-visual-selection' "Visual mode for NERDTree
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
