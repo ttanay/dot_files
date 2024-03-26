@@ -175,3 +175,4 @@ autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 " Keybindings for YouCompleteMe
 nmap gt :YcmC GoTo<CR>
 nmap gr :YcmC GoToReferences<CR>
+nmap gh :YcmC GoToInclude<CR>
