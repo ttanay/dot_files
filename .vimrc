@@ -49,6 +49,7 @@ set t_Co=256
 
 " NERDTree {{{
 let g:NERDTreeMapChangeRoot =  "`"
+let g:NERDTreeShowHidden = 1
 
 nmap <Leader>] :NERDTreeToggle<CR>
 nnoremap <Space>c :NERDTreeCWD<CR>
