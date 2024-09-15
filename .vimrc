@@ -160,18 +160,20 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-let g:clang_format_on_save = 1
+let g:clang_format#detect_style_file = 1
+let g:clang_format#auto_format = 1
+"let g:clang_format_on_save = 1
 " Run clang-format on save
 " https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
-function FormatBuffer()
-  if g:clang_format_on_save == 1 && &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
-    let cursor_pos = getpos('.')
-    :%!clang-format
-    call setpos('.', cursor_pos)
-  endif
-endfunction
+"function FormatBuffer()
+"  if g:clang_format_on_save == 1 && &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+"    let cursor_pos = getpos('.')
+"    :%!clang-format
+"    call setpos('.', cursor_pos)
+"  endif
+"endfunction
 
-autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+"autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
 
 " Keybindings for YouCompleteMe
 nmap gt :YcmC GoTo<CR>
