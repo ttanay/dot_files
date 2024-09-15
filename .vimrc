@@ -32,6 +32,7 @@ call vundle#begin()
     Plugin 'Eliot00/git-lens.vim' "gitlens for vim
     Plugin 'ctrlpvim/ctrlp.vim' "ctrl+p file finder like vscode
     Plugin 'wellle/context.vim' "Sticky function header
+    Plugin 'editorconfig/editorconfig-vim' "editorconfig support for vim
     "Plugin 'KabbAmine/zeavim.vim' "Zeal viewer in vim
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
