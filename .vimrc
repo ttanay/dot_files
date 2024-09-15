@@ -93,8 +93,6 @@ filetype off
 set foldmethod=indent
 set linebreak
 
-set number relativenumber
-
 syntax on
 set mouse=a
 
