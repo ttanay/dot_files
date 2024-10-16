@@ -22,6 +22,7 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 alias gst='git status'
 alias gfu='git fetch upstream'
 alias gfo='git fetch origin'
+alias gpo='git pull origin'
 
 # k8s aliases
 alias kp='kubectl get pods'
