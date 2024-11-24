@@ -7,9 +7,7 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-    " let Vundle manage Vundle, required
-    Plugin 'VundleVim/Vundle.vim'
-
+    " let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim'
     Plugin 'preservim/nerdtree' "File Explorer on the left
     Plugin 'vim-airline/vim-airline' "Status bar at the bottom
     Plugin 'chaoren/vim-wordmotion' "Skip all types of words
@@ -47,41 +45,41 @@ let g:GIT_LENS_ENABLED = 1
 " Airline {{{
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1 "change 0 to 1 if you have a powerline font
-set laststatus=2
-set t_Co=256
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.maxlinenr = '㏑'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = 'Ɇ'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '☰'
-let g:airline_symbols.maxlinenr = ''
+"set laststatus=2
+"set t_Co=256
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+"
+"" unicode symbols
+"let g:airline_left_sep = '»'
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+"let g:airline_right_sep = '◀'
+"let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '☰'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+"let g:airline_symbols.linenr = '¶'
+"let g:airline_symbols.maxlinenr = ''
+"let g:airline_symbols.maxlinenr = '㏑'
+"let g:airline_symbols.branch = '⎇'
+"let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+"let g:airline_symbols.spell = 'Ꞩ'
+"let g:airline_symbols.notexists = 'Ɇ'
+"let g:airline_symbols.whitespace = 'Ξ'
+"
+"" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
 " }}}
 
 " NERDTree {{{
@@ -122,6 +120,13 @@ endfunction
 autocmd WinEnter * call NERDTreeQuit()
 " }}}
 
+
+"vim-devicons
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_ctrlp = 1
+let g:webdevicons_enable_airline_tabline = 1
+
+
 " General {{{
 
 set nocompatible
@@ -136,7 +141,6 @@ filetype plugin indent on
 
 set encoding=utf-8
 set fileencodings=utf-8
-set guifont=DejaVuSans\ Mono\ 11
 
 set autoindent
 set smartindent
