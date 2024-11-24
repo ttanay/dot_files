@@ -33,6 +33,8 @@ call vundle#begin()
     Plugin 'ctrlpvim/ctrlp.vim' "ctrl+p file finder like vscode
     Plugin 'wellle/context.vim' "Sticky function header
     Plugin 'editorconfig/editorconfig-vim' "editorconfig support for vim
+    Plugin 'morhetz/gruvbox' "light mode is nice of this theme
+    Plugin 'ntpeters/vim-better-whitespace'
     "Plugin 'KabbAmine/zeavim.vim' "Zeal viewer in vim
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,9 +109,9 @@ set cindent
 set background=dark
 set expandtab
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+"set shiftwidth=4
+"set softtabstop=4
+"set tabstop=4
 set wildignore=*.pyc
 set ignorecase
 set smartcase
@@ -163,12 +165,12 @@ nmap <silent> <c-l> :wincmd l<CR>
 let g:clang_format#detect_style_file = 1
 let g:clang_format#auto_format = 1
 "let g:clang_format_on_save = 1
-" Run clang-format on save
-" https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
+"" Run clang-format on save
+"" https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
 "function FormatBuffer()
 "  if g:clang_format_on_save == 1 && &modified && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
 "    let cursor_pos = getpos('.')
-"    :%!clang-format
+"    :%!clang-format-18
 "    call setpos('.', cursor_pos)
 "  endif
 "endfunction
