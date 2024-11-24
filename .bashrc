@@ -29,3 +29,9 @@ alias kp='kubectl get pods'
 alias kctl='kubectl'
 alias kl='kubectl logs'
 alias kall='kubectl get all'
+
+# Clang aliases
+alias clang-format="clang-format-18"
+
+# Python
+alias python=python3
