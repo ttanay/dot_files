@@ -35,6 +35,7 @@ call vundle#begin()
     Plugin 'editorconfig/editorconfig-vim' "editorconfig support for vim
     Plugin 'morhetz/gruvbox' "light mode is nice of this theme
     Plugin 'ntpeters/vim-better-whitespace'
+    Plugin 'ryanoasis/vim-devicons' "icons
     "Plugin 'KabbAmine/zeavim.vim' "Zeal viewer in vim
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,9 +46,42 @@ let g:GIT_LENS_ENABLED = 1
 " Settings I liked from joom/vim-starter
 " Airline {{{
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0 "change 0 to 1 if you have a powerline font
+let g:airline_powerline_fonts = 1 "change 0 to 1 if you have a powerline font
 set laststatus=2
 set t_Co=256
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.maxlinenr = '㏑'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = 'Ɇ'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 " }}}
 
 " NERDTree {{{
@@ -102,6 +136,7 @@ filetype plugin indent on
 
 set encoding=utf-8
 set fileencodings=utf-8
+set guifont=DejaVuSans\ Mono\ 11
 
 set autoindent
 set smartindent

@@ -35,3 +35,7 @@ alias clang-format="clang-format-18"
 
 # Python
 alias python=python3
+
+# UTF-8 locale
+LANG="en_IN.utf8"
+export LANG
