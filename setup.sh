@@ -29,5 +29,5 @@ cat .tmux.conf >> $HOME/.tmux.conf
 install_vscode
 
 # Install zeal 
-. ./setup/install.sh
+. ./zeal/install.sh
 install_zeal
