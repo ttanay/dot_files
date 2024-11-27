@@ -164,6 +164,7 @@ set nobackup
 set number
 set linespace=3
 set backspace=indent,eol,start
+set relativenumber
 
 
 fun! StripTrailingWhitespace()
