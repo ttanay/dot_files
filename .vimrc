@@ -34,6 +34,8 @@ call vundle#begin()
     Plugin 'morhetz/gruvbox' "light mode is nice of this theme
     Plugin 'ntpeters/vim-better-whitespace'
     Plugin 'ryanoasis/vim-devicons' "icons
+    Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plugin 'psf/black'
     "Plugin 'KabbAmine/zeavim.vim' "Zeal viewer in vim
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -129,6 +131,7 @@ let g:webdevicons_enable_airline_tabline = 1
 
 " General {{{
 
+set guifont=HackNerdFontMono\ Regular\ 11
 set nocompatible
 filetype off
 set foldmethod=indent
@@ -216,6 +219,11 @@ let g:clang_format#auto_format = 1
 "endfunction
 
 "autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+
+" psf/black
+let g:black_quiet = 1
+" Run black on saving Python file
+autocmd BufWritePost *.py execute ':Black'
 
 " Keybindings for YouCompleteMe
 nmap gt :YcmC GoTo<CR>
