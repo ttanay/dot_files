@@ -7,7 +7,7 @@ function install_vscode {
     sudo apt install -y code
 
     # Install VS Code extensions
-    readarray -t extensions <./setup/vscode_extensions
+    readarray -t extensions <./extensions
     for extension in "${extensions[@]}"
     do
         code --install-extension $extension
