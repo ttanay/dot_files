@@ -18,6 +18,9 @@ export HISTFILE=~/.bash_eternal_history
 # http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+alias grep="grep --color=always"
+alias less="less -R"
+
 # Git Aliases
 alias gst='git status'
 alias gfu='git fetch upstream'
