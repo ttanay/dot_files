@@ -207,7 +207,8 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 let g:clang_format#detect_style_file = 1
 "let g:clang_format#auto_format = 1
-let g:clang_format_on_save = 1
+let g:clang_format#auto_format_on_insert_leave = 1
+let g:clang_format_on_save = 0
 " Run clang-format on save
 " https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
 function FormatBuffer()
