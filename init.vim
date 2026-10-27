@@ -57,6 +57,8 @@ call plug#begin(stdpath('data') . '/plugged')
 
     Plug 'editorconfig/editorconfig-vim'        " EditorConfig support
 
+    Plug 'MeanderingProgrammer/render-markdown.nvim' " Render markdown in the buffer
+
     Plug 'psf/black', { 'branch': 'stable' }
 
     Plug 'Julian/lean.nvim' "Lean
@@ -308,10 +310,10 @@ local ok_gs, gitsigns = pcall(require, 'gitsigns')
 if ok_gs then gitsigns.setup() end
 
 -- treesitter (main branch API; parser install needs: npm i -g tree-sitter-cli)
-local ts_langs = { 'c', 'cpp', 'go', 'python', 'lua', 'vim' }
+local ts_langs = { 'c', 'cpp', 'go', 'python', 'lua', 'vim', 'markdown' }
 local ok_ts, ts = pcall(require, 'nvim-treesitter')
 if ok_ts then
-  ts.install(ts_langs)
+  ts.install(vim.list_extend({ 'markdown_inline' }, ts_langs))
   vim.api.nvim_create_autocmd('FileType', {
     pattern = ts_langs,
     callback = function() pcall(vim.treesitter.start) end,
