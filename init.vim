@@ -32,6 +32,7 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'sheerun/vim-polyglot'                 " Language Pack
 
     " LSP & completion (replaces YouCompleteMe + jedi-vim)
+    Plug 'neovim/nvim-lspconfig'                " Default server configs for vim.lsp.config
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -55,6 +56,8 @@ call plug#begin(stdpath('data') . '/plugged')
     Plug 'lukas-reineke/indent-blankline.nvim'  " Indent line markers (replaces indentLine)
 
     Plug 'editorconfig/editorconfig-vim'        " EditorConfig support
+
+    Plug 'MeanderingProgrammer/render-markdown.nvim' " Render markdown in the buffer
 
     Plug 'psf/black', { 'branch': 'stable' }
 
@@ -306,12 +309,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local ok_gs, gitsigns = pcall(require, 'gitsigns')
 if ok_gs then gitsigns.setup() end
 
--- treesitter
-local ok_ts, tsconfig = pcall(require, 'nvim-treesitter.configs')
+-- treesitter (main branch API; parser install needs: npm i -g tree-sitter-cli)
+local ts_langs = { 'c', 'cpp', 'go', 'python', 'lua', 'vim', 'markdown' }
+local ok_ts, ts = pcall(require, 'nvim-treesitter')
 if ok_ts then
-  tsconfig.setup({
-    ensure_installed = { 'c', 'cpp', 'go', 'python', 'lua', 'vim' },
-    highlight = { enable = true },
+  ts.install(vim.list_extend({ 'markdown_inline' }, ts_langs))
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = ts_langs,
+    callback = function() pcall(vim.treesitter.start) end,
   })
 end
 
@@ -323,12 +328,11 @@ if ok_ctx then tsctx.setup({ enable = true }) end
 local ok_ibl, ibl = pcall(require, 'ibl')
 if ok_ibl then ibl.setup() end
 
---neovim
-lua << EOF
-require('lean').setup({
+-- lean
+vim.g.lean_config = {
   mappings = true,
   infoview = {
     autoopen = true,
   },
-})
+}
 EOF

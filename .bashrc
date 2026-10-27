@@ -39,6 +39,11 @@ alias clang-format="clang-format-18"
 # Python
 alias python=python3
 
+# Neovim
+alias vim=nvim
+export EDITOR=nvim
+export VISUAL=nvim
+
 # UTF-8 locale
 LANG="en_IN.utf8"
 export LANG
