@@ -36,6 +36,8 @@ call vundle#begin()
     Plugin 'ryanoasis/vim-devicons' "icons
     Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plugin 'psf/black'
+    Plugin 'uarun/vim-protobuf'
+    Plugin 'vim-ruby/vim-ruby'
     "Plugin 'KabbAmine/zeavim.vim' "Zeal viewer in vim
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -168,6 +170,7 @@ set number
 set linespace=3
 set backspace=indent,eol,start
 set relativenumber
+set autoread
 
 
 fun! StripTrailingWhitespace()
@@ -208,7 +211,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 let g:clang_format#detect_style_file = 1
 "let g:clang_format#auto_format = 1
 let g:clang_format#auto_format_on_insert_leave = 1
-let g:clang_format_on_save = 0
+let g:clang_format_on_save = 1
 " Run clang-format on save
 " https://vi.stackexchange.com/questions/21102/how-to-clang-format-the-current-buffer-on-save
 function FormatBuffer()
@@ -230,3 +233,5 @@ autocmd BufWritePost *.py execute ':Black'
 nmap gt :YcmC GoTo<CR>
 nmap gr :YcmC GoToReferences<CR>
 nmap gh :YcmC GoToInclude<CR>
+nmap ve :YcmShowDetailedDiagnostic<CR>
+nmap yf :YcmCompleter Format<CR>
